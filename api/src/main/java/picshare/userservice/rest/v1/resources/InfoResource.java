@@ -48,15 +48,21 @@ public class InfoResource {
         github.add("https://github.com/picshare/storage");
         github.add("https://github.com/picshare/imagemanagement");
         github.add("https://github.com/picshare/commentsmanagement");
+        github.add("https://github.com/picshare/frontend");
         info.setGithub(github);
 
 
         List<String> travis = new ArrayList();
-        travis.add("");
+        travis.add("https://travis-ci.com/picshare/userservice");
+        travis.add("https://travis-ci.com/picshare/storage");
+        travis.add("https://travis-ci.com/picshare/imagemanagement");
+        travis.add("https://travis-ci.com/picshare/commentsmanagement");
+        travis.add("https://travis-ci.com/picshare/frontend");
         info.setTravis(travis);
 
         List<String> dockerHub = new ArrayList();
-        dockerHub.add("");
+        dockerHub.add("https://hub.docker.com/r/jernejcernelc/picshare-userservice/");
+        dockerHub.add("https://hub.docker.com/r/jernejcernelc/picshare-storage/");
         info.setDockerhub(dockerHub);
 
         return Response.status(Response.Status.OK).entity(info).build();
