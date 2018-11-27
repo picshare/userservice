@@ -20,7 +20,6 @@
         <kumuluzee-rest.version>1.1.0</kumuluzee-rest.version>
         <kumuluzee-openapi.version>1.0.0-SNAPSHOT</kumuluzee-openapi.version>
         <postgresql.version>42.1.4</postgresql.version>
-        <rabbitmq.version>5.1.1</rabbitmq.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kumuluzee-cors.version>1.0.2</kumuluzee-cors.version>
     </properties>
@@ -84,11 +83,6 @@
                 <groupId>com.kumuluz.ee.openapi</groupId>
                 <artifactId>kumuluzee-openapi</artifactId>
                 <version>${kumuluzee-openapi.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.rabbitmq</groupId>
-                <artifactId>amqp-client</artifactId>
-                <version>${rabbitmq.version}</version>
             </dependency>
             <!-- module dependencies -->
             <dependency>
