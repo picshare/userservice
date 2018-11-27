@@ -39,7 +39,8 @@ public class InfoResource {
         info.setOpis_projekta("Moj projekt implementira aplikacijo za deljenje slik.");
 
         List<String> mikrostoritve = new ArrayList();
-        mikrostoritve.add("");
+        mikrostoritve.add("http://159.122.186.171:30001/v1/user");
+        mikrostoritve.add("http://159.122.186.171:30002/v1/image");
         info.setMikrostoritve(mikrostoritve);
 
 
