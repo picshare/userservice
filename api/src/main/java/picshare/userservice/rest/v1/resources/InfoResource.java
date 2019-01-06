@@ -1,22 +1,14 @@
 package picshare.userservice.rest.v1.resources;
 
-import com.kumuluz.ee.rest.beans.QueryParameters;
-import io.swagger.oas.annotations.Operation;
-import io.swagger.oas.annotations.Parameter;
-import io.swagger.oas.annotations.enums.ParameterIn;
-import io.swagger.oas.annotations.media.Content;
-import io.swagger.oas.annotations.media.Schema;
-import io.swagger.oas.annotations.responses.ApiResponse;
 import picshare.userservice.entitete.business.Info;
-import picshare.userservice.entitete.jpa.User;
-import picshare.userservice.entitete.business.Error;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
