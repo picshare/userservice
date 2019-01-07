@@ -1,5 +1,10 @@
 sudo: required
 
+# safelist
+branches:
+  only:
+  - master
+
 services:
   - docker
 
@@ -14,7 +19,7 @@ cache:
   - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=jernejcernelc/picshare-userservice:0.1
+  - DOCKER_IMAGE=jernejcernelc/picshare-userservice
 
 script:
   - mvn clean package -U
