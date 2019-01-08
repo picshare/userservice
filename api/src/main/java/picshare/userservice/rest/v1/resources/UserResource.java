@@ -1,6 +1,7 @@
 package picshare.userservice.rest.v1.resources;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
+import org.eclipse.microprofile.metrics.annotation.Metered;
 import picshare.userservice.entitete.jpa.User;
 import picshare.userservice.storitve.beans.UporabnikBean;
 
@@ -28,6 +29,7 @@ public class UserResource {
     UporabnikBean uB;
 
     @GET
+    @Metered(name = "requests.get.users")
     public Response returnUsers(){
         QueryParameters query = QueryParameters.query(uriInfo.getRequestUri().getQuery()).build();
         List<User> users = uB.getAllUsers(query);
@@ -41,6 +43,7 @@ public class UserResource {
 
     @Path("{id}")
     @GET
+    @Metered(name = "requests.get.user")
     public Response returnUser(@PathParam("id") Integer id){
         User user = uB.getUser(id);
         if(user != null) {
@@ -53,6 +56,7 @@ public class UserResource {
 
 
     @POST
+    @Metered(name = "requests.add.users")
     public Response addUser(User user){
         User u = uB.addUser(user);
         return Response.status(Response.Status.OK).entity(u).build();
@@ -60,6 +64,7 @@ public class UserResource {
 
     @Path("{id}")
     @POST
+    @Metered(name = "requests.update.users")
     public Response updateUser(@PathParam("id") Integer id, User user) {
         uB.updateUser(id, user);
         return Response.status(Response.Status.OK).entity(user).build();
@@ -67,6 +72,7 @@ public class UserResource {
 
     @Path("{id}")
     @DELETE
+    @Metered(name = "requests.delete.users")
     public Response deleteUser(@PathParam("id") Integer id) {
         try {
             uB.deleteUser(id);
