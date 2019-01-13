@@ -1,5 +1,7 @@
 package picshare.userservice.rest.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
+import org.apache.log4j.LogManager;
 import picshare.userservice.storitve.beans.DummyBean;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,11 +15,12 @@ import javax.ws.rs.core.Response;
 import java.util.logging.Logger;
 
 @Path("destroy")
+@Log
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class DestroyResource {
-    private final Logger log = Logger.getLogger(this.getClass().getName());
+    private static final org.apache.log4j.Logger LOG = LogManager.getLogger(DestroyResource.class.getName());
 
     @Inject
     DummyBean dB;

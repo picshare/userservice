@@ -1,8 +1,11 @@
 package picshare.userservice.rest.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
 import com.kumuluz.ee.rest.beans.QueryParameters;
+import org.apache.log4j.LogManager;
 import org.eclipse.microprofile.metrics.annotation.Metered;
 import picshare.userservice.entitete.jpa.User;
+import picshare.userservice.storitve.beans.DummyBean;
 import picshare.userservice.storitve.beans.UporabnikBean;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,20 +16,24 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Path("user")
+@Log
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class UserResource {
-    private final Logger log = Logger.getLogger(this.getClass().getName());
+    private static final org.apache.log4j.Logger LOG = LogManager.getLogger(UserResource.class.getName());
+
 
     @Context
     protected UriInfo uriInfo;
 
     @Inject
     UporabnikBean uB;
+
+    @Inject
+    DummyBean dB;
 
     @GET
     @Metered(name = "requests.get.users")

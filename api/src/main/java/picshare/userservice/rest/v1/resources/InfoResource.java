@@ -1,5 +1,6 @@
 package picshare.userservice.rest.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
 import picshare.userservice.entitete.business.Info;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,6 +15,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Path("info")
+@Log
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
